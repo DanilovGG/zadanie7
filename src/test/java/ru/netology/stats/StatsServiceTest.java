@@ -9,9 +9,9 @@ class StatsServiceTest {
     void testCalculateTotalSales() {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        service.setSales(sales);
-        int expectedTotalSales = 180;
-        Assertions.assertEquals(expectedTotalSales, service.calculateTotalSales());
+        StatsService statsService = new StatsService();
+        statsService.setSales(sales);
+        Assertions.assertEquals(180, statsService.calculateTotalSales());
         service.printTotalSales();
     }
 
@@ -20,9 +20,9 @@ class StatsServiceTest {
     void testCalculateAverageSales() {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        service.setSales(sales);
-        int expectedAverageSales = 15;
-        Assertions.assertEquals(expectedAverageSales, service.calculateAverageSales(), 0.0000000001);
+        StatsService statsService = new StatsService();
+        statsService.setSales(sales);
+        Assertions.assertEquals(15, statsService.calculateAverageSales(), 0);
         service.printAverageSales();
     }
 
@@ -31,9 +31,9 @@ class StatsServiceTest {
     void testGetMaxSalesMonth() {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        service.setSales(sales);
-        int expectedMaxSalesMonth = 5;
-        Assertions.assertEquals(expectedMaxSalesMonth, service.getMaxSalesMonth());
+        StatsService statsService = new StatsService();
+        statsService.setSales(sales);
+        Assertions.assertEquals(5, statsService.getMaxSalesMonth());
         service.printMaxSalesMonth();
     }
 
@@ -42,9 +42,9 @@ class StatsServiceTest {
     void testGetMinSalesMonth() {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        service.setSales(sales);
-        int expectedMinSalesMonth = 8;
-        Assertions.assertEquals(expectedMinSalesMonth, service.getMinSalesMonth());
+        StatsService statsService = new StatsService();
+        statsService.setSales(sales);
+        Assertions.assertEquals(8, statsService.getMinSalesMonth());
         service.printMinSalesMonth();
     }
 
@@ -53,9 +53,9 @@ class StatsServiceTest {
     void testCountMonthsBelowAverage() {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        service.setSales(sales);
-        int expectedMonthsBelowAverage = 5;
-        Assertions.assertEquals(expectedMonthsBelowAverage, service.countMonthsBelowAverage());
+        StatsService statsService = new StatsService();
+        statsService.setSales(sales);
+        Assertions.assertEquals(5, statsService.countMonthsBelowAverage());
         service.printMonthsBelowAverage();
     }
 
@@ -64,9 +64,9 @@ class StatsServiceTest {
     void testCountMonthsAboveAverage() {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        service.setSales(sales);
-        int expectedMonthsAboveAverage = 7;
-        Assertions.assertEquals(expectedMonthsAboveAverage, service.countMonthsAboveAverage());
+        StatsService statsService = new StatsService();
+        statsService.setSales(sales);
+        Assertions.assertEquals(7, statsService.countMonthsAboveAverage());
         service.printMonthsAboveAverage();
     }
 }

@@ -2,10 +2,10 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    private int[] sales;
+    private static int[] sales;
 
-    public void setSales(int[] sales) {
-        this.sales = sales;
+    public static void setSales(int[] sales) {
+        StatsService.sales = sales;
     }
 
     // сумму всех продаж
