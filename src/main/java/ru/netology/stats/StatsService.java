@@ -16,8 +16,7 @@ public class StatsService {
         }
         return totalSales;
     }
-
-
+    
     // среднюю сумму продаж в месяц
     public int calculateAverageSales() {
         return calculateTotalSales() / sales.length;
