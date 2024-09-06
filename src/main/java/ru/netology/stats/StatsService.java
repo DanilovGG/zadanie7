@@ -1,5 +1,5 @@
 package ru.netology.stats;
-import java.util.Arrays;
+
 public class StatsService {
 
     private int[] sales;
@@ -69,6 +69,7 @@ public class StatsService {
         }
         return aboveAverageCount;
     }
+
     public void printTotalSales() {
         System.out.println("Общая сумма продаж: " + calculateTotalSales());
     }
