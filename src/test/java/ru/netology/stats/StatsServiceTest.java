@@ -2,71 +2,59 @@ package ru.netology.stats;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class StatsServiceTest {
+public class StatsServiceTest {
 
     @Test
-        //сумму всех продаж
     void testCalculateTotalSales() {
-        StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService statsService = new StatsService();
-        statsService.setSales(sales);
-        Assertions.assertEquals(180, statsService.calculateTotalSales());
-        service.printTotalSales();
+        long result = statsService.calculateTotalSales(sales);
+        Assertions.assertEquals(180, result);
+        System.out.println("Общая сумма продаж: " + result);
     }
 
     @Test
-        //средняя сумма продаж в месяц
     void testCalculateAverageSales() {
-        StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService statsService = new StatsService();
-        statsService.setSales(sales);
-        Assertions.assertEquals(15, statsService.calculateAverageSales(), 0);
-        service.printAverageSales();
+        long result = statsService.calculateAverageSales(sales);
+        Assertions.assertEquals(15, result, 0);
+        System.out.println("Средняя сумма продаж в месяц: " + result);
     }
 
     @Test
-        //номер месяца, в котором был пик продаж, то есть осуществлены продажи на максимальную сумму
     void testGetMaxSalesMonth() {
-        StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService statsService = new StatsService();
-        statsService.setSales(sales);
-        Assertions.assertEquals(5, statsService.getMaxSalesMonth());
-        service.printMaxSalesMonth();
+        int result = statsService.getMaxSalesMonth(sales);
+        Assertions.assertEquals(5, result);
+        System.out.println("Месяц с максимальной продажей: " + result + "-й");
     }
 
     @Test
-        //номер месяца, в котором был минимум продаж, то есть осуществлены продажи на минимальную сумму
     void testGetMinSalesMonth() {
-        StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService statsService = new StatsService();
-        statsService.setSales(sales);
-        Assertions.assertEquals(8, statsService.getMinSalesMonth());
-        service.printMinSalesMonth();
+        int result = statsService.getMinSalesMonth(sales);
+        Assertions.assertEquals(8, result);
+        System.out.println("Месяц с минимальной продажей: " + result + "-й");
     }
 
     @Test
-        //количество месяцев, в которых продажи были ниже среднего
     void testCountMonthsBelowAverage() {
-        StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService statsService = new StatsService();
-        statsService.setSales(sales);
-        Assertions.assertEquals(5, statsService.countMonthsBelowAverage());
-        service.printMonthsBelowAverage();
+        int result = statsService.countMonthsBelowAverage(sales);
+        Assertions.assertEquals(5, result);
+        System.out.println("Количество месяцев с продажами ниже средней: " + result);
     }
 
     @Test
-        //количество месяцев, в которых продажи были выше среднего
     void testCountMonthsAboveAverage() {
-        StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService statsService = new StatsService();
-        statsService.setSales(sales);
-        Assertions.assertEquals(7, statsService.countMonthsAboveAverage());
-        service.printMonthsAboveAverage();
+        int result = statsService.countMonthsAboveAverage(sales);
+        Assertions.assertEquals(7, result);
+        System.out.println("Количество месяцев с продажами выше средней: " + result);
     }
 }
